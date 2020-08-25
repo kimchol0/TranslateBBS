@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.AdminDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Admin" >
+    <id column="id" property="id"   />
+ <result column="username" property="username" />
+ <result column="pwd" property="pwd" />
+  </resultMap>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from admin     where id = #{id}
+   </select>
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+     delete from admin where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Admin" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+     </selectKey>
+    insert into admin (username,pwd)    values
+     (#{username},#{pwd})
+  </insert>
+  
+  
+  <update id="updateById" parameterType="com.entity.Admin" >
+    update admin  set       username = #{username},      pwd = #{pwd}     where id = #{id}
+  </update>
+  
+    <update id="adminpwd" parameterType="com.entity.Admin" >
+    update admin  set   pwd = #{pwd}     where username = #{username}
+  </update>
+  
+  <select id="getList"   resultMap="BaseResultMap">
+      select * from  admin   order by id desc limit #{begin}, ${size}
+  </select>
+  <select id="getTotal" resultType="int">
+    select count(*) from       admin
+  </select>
+  
+    <select id="adminlogin" resultMap="BaseResultMap"   >
+    select * from admin     where  username = #{username} and pwd = #{pwd} 
+   </select>
+</mapper>
+

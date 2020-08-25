@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.UserDao" >
+  <resultMap id="BaseResultMap" type="com.entity.User" >
+    <id column="id" property="id"   />
+ <result column="username" property="username" />
+ <result column="pwd" property="pwd" />
+ <result column="xingming" property="xingming" />
+ <result column="sex" property="sex" />
+ <result column="tel" property="tel" />
+ <result column="address" property="address" />
+ <result column="touxing" property="touxing" />
+ <result column="jifen" property="jifen" />
+  </resultMap>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from user     where id = #{id}
+   </select>
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+     delete from user where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.entity.User" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+     </selectKey>
+    insert into user (username,pwd,xingming,sex,tel,address,touxing,jifen)    values
+     (#{username},#{pwd},#{xingming},#{sex},#{tel},#{address},#{touxing},#{jifen})
+  </insert>
+  <update id="updateById" parameterType="com.entity.User" >
+    update user  set       username = #{username},      pwd = #{pwd},      xingming = #{xingming},      sex = #{sex},      tel = #{tel},      address = #{address},      touxing = #{touxing},      jifen = #{jifen}     where id = #{id}
+  </update>
+  
+    <update id="updatejifen" parameterType="com.entity.User" >
+    update user  set    jifen =jifen+ #{jifen}     where username = #{username}
+  </update>
+  <select id="getList"   resultMap="BaseResultMap">
+      select * from  user   order by id desc limit #{begin}, ${size}
+  </select>
+  <select id="getTotal" resultType="int">
+    select count(*) from       user
+  </select>
+  <select id="searlist"  parameterType="com.entity.User"  resultMap="BaseResultMap">
+      select * from  user   where 1=1 ${Where} order by id desc
+  </select>
+        <select id="userlogin" resultMap="BaseResultMap"   >
+    select * from user     where  username = #{username} and pwd = #{pwd} 
+   </select>
+    <update id="updateByusername" parameterType="com.entity.User" >
+    update user  set      pwd = #{pwd},      xingming = #{xingming},      sex = #{sex},        tel = #{tel},      address = #{address}     where  username = #{username}
+  </update>
+     <select id="userinfo" resultMap="BaseResultMap"  >
+    select * from user     where username = #{username}
+   </select>
+     <select id="getListJiFen"   resultMap="BaseResultMap">
+      select username,xingming,jifen from  user   order by id desc limit #{begin}, ${size}
+  </select>
+</mapper>
+

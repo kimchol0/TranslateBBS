@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.TieziDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Tiezi" >
+    <id column="id" property="id"   />
+ <result column="biaoti" property="biaoti" />
+ <result column="shijian" property="shijian" />
+ <result column="username" property="username" />
+ <result column="neirong" property="neirong" />
+ <result column="bk" property="bk" />
+ <result column="dianji" property="dianji" />
+ <result column="fujian" property="fujian" />
+ <result column="jifen" property="jifen" />
+ <result column="hfs" property="hfs" />
+ <result column="zuihou" property="zuihou" />
+  </resultMap>
+  
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from v_tz     where id = #{id}
+   </select>
+   
+   
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+     delete from tiezi where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Tiezi" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+     </selectKey>
+    insert into tiezi (biaoti,shijian,username,neirong,bk,dianji,fujian,jifen,hfs,zuihou,tstate)    values
+     (#{biaoti},#{shijian},#{username},#{neirong},#{bk},#{dianji},#{fujian},#{jifen},#{hfs},#{zuihou},#{tstate})
+  </insert>
+  
+  <update id="updateById"  parameterType="com.entity.Tiezi" >
+    update tiezi  set       biaoti = #{biaoti},      shijian = #{shijian},      username = #{username},      neirong = #{neirong},      bk = #{bk},      dianji = #{dianji},      fujian = #{fujian},      jifen = #{jifen},      hfs = #{hfs},      zuihou = #{zuihou}     where id = #{id}
+  </update>
+    <update id="updatedj"  parameterType="java.lang.Integer" >
+    update tiezi  set    dianji =dianji+1 where id = #{id}
+  </update>
+ 
+ 
+    <update id="updatehfs" parameterType="com.entity.Tiezi" >
+    update tiezi  set    hfs =hfs+1 where id = #{id}
+  </update>
+       
+  
+  <select id="getList"   resultMap="BaseResultMap">
+      select * from  tiezi   order by id desc limit #{begin}, ${size}
+  </select>
+  <select id="getTotal" resultType="int">
+    select count(*) from       tiezi
+  </select>
+  <select id="searlist"  parameterType="com.entity.Tiezi"  resultMap="BaseResultMap">
+      select * from  tiezi    ${Where} 
+  </select>
+  
+  <select id="getListEchart" resultMap="BaseResultMap">
+  		select biaoti,dianji from tiezi where tstate=1
+  </select>
+  
+    <select id="getListshenhe"   resultMap="BaseResultMap">
+      select * from  tiezi   order by  tstate asc limit #{begin}, ${size}
+  </select>
+  
+      <update id="pass"  parameterType="java.lang.Integer" >
+    update tiezi set tstate=1 where id= #{id}
+  </update>
+  	
+  	<update id="reject" parameterType="java.lang.Integer">
+	update tiezi set tstate=2 where id=#{id}  	
+  	</update>
+  	
+  	<select id="getListjjzz" resultMap="BaseResultMap">
+  		select * from  tiezi   order by  tstate asc limit #{begin}, ${size}
+  	</select>
+  	
+  <update id="jiajing"  parameterType="java.lang.Integer" >
+    update tiezi set jjzz=1 where id= #{id}
+  </update>
+  	
+  <update id="zhiding"  parameterType="java.lang.Integer" >
+    update tiezi set jjzz=2 where id= #{id}
+  </update>
+  
+    <update id="huanyuan"  parameterType="java.lang.Integer" >
+    update tiezi set jjzz=0 where id= #{id}
+  </update>
+  
+</mapper>

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+table,td,div{font:12px/18px ""; color:#333;}
+ul,li{padding:0;margin:0;list-style-type:none;}
+dl,dt,dd{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,p{margin:0;padding:0; font-weight:100;}
+input,select,textarea,checkbox { margin:0; padding:0; font-weight:100;}
+img{border:0;margin:0;padding:0;}
+body,table,td,div,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,b,span,label,input,select,textarea,checkbox { font-size:12px; font-weight:100; color:#333;}
+a{blr:expression(this.onFocus=this.blur());outline: none;}
+.cls{ font:0/0 Arial; height:0; clear:both;}
+.clearfix{zoom:1}
+.clearfix:after{ content:"."; display:block; height:0; clear:both; overflow:hidden; visibility:visible}
+html {overflow-y:auto!important;*overflow-y:scroll;}
+.fl { float:left;}
+.fr { float:right;}
+
+/*全局样式 */
+.wrapper{width:100%; padding:0; margin:0 auto; clear:both; zoom:1; overflow:hidden;} 
+
+.wrapper_login { width:100%; height:800px; background:url(images/m_bg.gif) repeat-x;}
+.wrapper_login .cont { width:1000px; height:800px; margin:0 auto; background:url(images/login_bg.gif) no-repeat;}
+.wrapper_login .cont h2 { margin:257px 0 0 279px; width:440px; height:39px; font:600 14px/39px "宋体"; text-align:center; display:inline-block; color:#fff;}
+.wrapper_login .cont .logink { float:left; margin:18px 0 0 436px; _margin-left:216px; width:274px; height:166px; text-align:left; }
+.wrapper_login .cont .logink li { margin:5px 0; float:left;}
+.wrapper_login .cont .logink li label { width:48px; height:26px; line-height:26px; display:inline-block; text-align:right; color:#333; float:left;}
+.wrapper_login .cont .logink li input.text { height:24px; width:176px; border:1px solid #c6def3; margin-left:4px; vertical-align:middle; line-height:24px; background:#e3f2ff; padding-left:6px;}
+.wrapper_login .cont .logink li input.yzm { width:62px;}
+.wrapper_login .cont .logink li img { vertical-align:middle;}
+
+a.yzm_blue {color:#2776af; font-size:12px; font-weight:100; display:inline-block;}
+a.yzm_blue:hover { text-decoration:underline;}
+.ml6 { margin-left:6px;}
+
+.btn_dl {border:none;margin-left:54px; width:78px; height:29px; background:url(images/btn03.gif) no-repeat; font:100 14px/29px "宋体"; text-align:center; display:inline-block; color:#fff;}

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.BankuaiDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Bankuai" >
+    <id column="id" property="id"   />
+ <result column="mingcheng" property="mingcheng" />
+ <result column="pic" property="pic" />
+ <result column="jieshao" property="jieshao" />
+ <result column="tieshu" property="tieshu" />
+  </resultMap>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from bankuai     where id = #{id}
+   </select>
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+     delete from bankuai where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Bankuai" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+     </selectKey>
+    insert into bankuai (mingcheng,pic,jieshao,tieshu)    values
+     (#{mingcheng},#{pic},#{jieshao},#{tieshu})
+  </insert>
+  <update id="updateById" parameterType="com.entity.Bankuai" >
+    update bankuai  set       mingcheng = #{mingcheng},      pic = #{pic},      jieshao = #{jieshao},      tieshu = #{tieshu}     where id = #{id}
+  </update>
+  <select id="getList"   resultMap="BaseResultMap">
+      select * from  bankuai   order by id desc limit #{begin}, ${size}
+  </select>
+  <select id="getTotal" resultType="int">
+    select count(*) from       bankuai
+  </select>
+  <select id="searlist"  parameterType="com.entity.Bankuai"  resultMap="BaseResultMap">
+      select * from  bankuai   where 1=1 ${Where} order by id desc
+  </select>
+    <update id="updateByts" parameterType="com.entity.Bankuai" >
+    update bankuai  set       tieshu = tieshu+1   where mingcheng = #{mingcheng}
+  </update>
+      <update id="updateBytsj" parameterType="com.entity.Bankuai" >
+    update bankuai  set       tieshu = tieshu-1   where mingcheng = #{mingcheng}
+  </update>
+  
+  
+</mapper>
+

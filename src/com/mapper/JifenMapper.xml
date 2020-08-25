@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.JifenDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Jifen" >
+    <id column="id" property="id"   />
+ <result column="username" property="username" />
+ <result column="shijian" property="shijian" />
+ <result column="jine" property="jine" />
+ <result column="fangshi" property="fangshi" />
+  </resultMap>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from jifen     where id = #{id}
+   </select>
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+     delete from jifen where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Jifen" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+     </selectKey>
+    insert into jifen (username,shijian,jine,fangshi)    values
+     (#{username},#{shijian},#{jine},#{fangshi})
+  </insert>
+  <update id="updateById" parameterType="com.entity.Jifen" >
+    update jifen  set       username = #{username},      shijian = #{shijian},      jine = #{jine},      fangshi = #{fangshi}     where id = #{id}
+  </update>
+  <select id="getList"   resultMap="BaseResultMap">
+      select * from  jifen   order by id desc limit #{begin}, ${size}
+  </select>
+  <select id="getTotal" resultType="int">
+    select count(*) from       jifen
+  </select>
+  <select id="searlist"  parameterType="com.entity.Jifen"  resultMap="BaseResultMap">
+      select * from  jifen   where 1=1 ${Where} order by id desc
+  </select>
+  
+  
+  
+</mapper>
+

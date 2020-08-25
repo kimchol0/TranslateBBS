@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.HuifuDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Huifu" >
+    <id column="id" property="id"   />
+ <result column="username" property="username" />
+ <result column="tid" property="tid" />
+ <result column="shijian" property="shijian" />
+ <result column="neirong" property="neirong" />
+  </resultMap>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from v_hf     where tid = #{id}
+   </select>
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+     delete from huifu where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Huifu" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+     </selectKey>
+    insert into huifu (username,tid,shijian,neirong,hstate)    values
+     (#{username},#{tid},#{shijian},#{neirong},#{hstate})
+  </insert>
+  <update id="updateById" parameterType="com.entity.Huifu" >
+    update huifu  set       username = #{username},      shijian = #{shijian},      neirong = #{neirong}     where id = #{id}
+  </update>
+  <select id="getList"   resultMap="BaseResultMap">
+      select * from  huifu   order by id desc limit #{begin}, ${size}
+  </select>
+  <select id="getTotal" resultType="int">
+    select count(*) from       huifu
+  </select>
+  <select id="searlist"  parameterType="com.entity.Huifu"  resultMap="BaseResultMap">
+      select * from  v_hf   where 1=1 ${Where} order by id asc
+  </select>
+  <select id="weiduxiaoxi" resultType="java.lang.Integer" parameterType="java.lang.String" >
+  		<!-- SELECT count(*) FROM `huifu` where username=#{username} and hstate=0 -->
+  		SELECT count(*) FROM `v_uptiezi` where hstate=0  and username= #{username}
+  </select>
+	<update id="clearxiaoxi" parameterType="int">
+  		update v_uptiezi set hstate=1 where id=#{id}
+  </update>
+</mapper>
+

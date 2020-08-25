@@ -1,0 +1,390 @@
+.content {
+    width: 1000px;
+    margin: 0 auto;
+    
+}
+.clear
+{
+  clear: both;
+}
+
+.cptuijantitle {
+    width: 1000px;
+    height: 40px;
+    background-color: #46b448;
+    margin-top: 3px;
+}
+/*新闻部分*/
+.xinwen
+{
+width: 1000px;
+ float: left;
+
+}
+.xnews2
+{
+ width: 1000px;
+ float: left;
+ height: 160px;
+ padding-top: 10px;
+ border-bottom:1px solid #46b448;
+}
+ 
+.pic
+{
+width: 300px;
+ float: left;
+ height: 150px; 
+  padding-top: 5px;
+}
+.pic img
+{
+width: 300px; 
+ height: 150px;  
+}
+.dec a 
+{
+color:#46b448;
+}
+/*标题*/
+.dec
+{
+ width: 700px;
+ float: left;
+
+}
+
+.dec h3
+{ 
+ 
+float: left;
+padding-left: 20px;
+font-size: 20px;
+line-height: 1.5;
+font-weight: normal;
+margin: 0 0 10px 0;
+}
+.dec h3 a
+{ 
+ 
+font-size: 20px;
+line-height: 1.5;
+font-weight: normal;
+margin: 0 0 10px 0;
+}
+.fbtime
+{ 
+	clear: both; 
+    float: left;
+    text-align: left;
+    margin-left: 15px;
+ 
+}
+.canting
+{
+ width: 1000px;
+ float: left;
+ height: 160px;
+ padding-top: 10px;
+ 
+}
+
+.cantingcon
+{
+	    width: 600px;
+    float: left;
+    height: 150px;
+    padding-top: 5px;
+}
+.cantingjieshao
+{
+	    width: 1000px;
+    float: left;
+    height: 150px;
+    padding-top: 5px;
+}
+.cantinginfo
+{ 
+	clear: both; 
+    float: left;
+    text-align: left;
+    margin-left: 15px;
+   margin-top:10px;
+ 
+}
+.pingluntit
+{  
+	width: 1000px;
+    margin: 10px auto;
+    padding: 10px;
+    background: url(../images/newsbg.jpg)  ; 
+  
+	
+}
+.PLMM
+{
+	width: 1000px;
+    margin: 10px auto;
+}
+.ULMM
+{
+	  margin-top: 10px ;
+}
+.pingluntit h2
+{
+	width: 1000px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 30px;
+    font-size: 14px;
+    color: #333;
+    background: url(../images/newh3.jpg) no-repeat 10px center;
+}
+
+.cantinginfo h3 
+{ 
+ 
+font-size: 20px;
+line-height: 1.5;
+font-weight: normal;
+margin: 0 0 10px 0;
+color:#46b448;
+}
+
+
+
+.dec p
+{ 
+	float: left;
+	text-align: left;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 20px;
+     padding-top: 10px;
+}
+/*新闻部分end*/
+
+/*新闻详情*/
+.newinfo
+{
+	width: 1033px;
+	padding-top: 20px;
+}
+.newinfo h1
+{ 
+	text-align: center;
+font-size: 20px;
+line-height: 1.5;
+font-weight: normal;
+margin: 0 0 10px 0;
+
+}
+
+.spread
+{
+color: #999999;
+    font-size: 12px;
+    line-height: 26px;
+}
+.substance
+{
+	 padding: 15px 0;
+    background: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.substance p
+{  font-size: 16px;
+	    text-align: left;
+}
+/*新闻详情end*/
+
+/*产品详情*/
+
+.showandbuy
+{
+	width: 1033px;
+	height: 400px;
+	float: left;
+	margin-top: 10px;
+	 background: #ffffff;
+    border: 1px solid transparent;
+    border-color: #eaeaea;
+    border-radius: 5px 5px; 
+}
+ 
+.cppic
+{
+
+	float: left; 
+	width: 380px;
+	height: 380px;
+	margin-top: 5px;
+	text-align: left; 
+	 border-radius: 5px 5px; 
+	background-color: blue; 
+}
+.cppic img
+{
+	width: 400px;
+	height: 400px;
+}
+.cpbuy
+{
+	float: left; 
+	width: 600px;
+	height: 400px; 
+	padding-left: 33px;
+}
+.cpbuy h1
+{
+	padding-top: 20px;
+	 font-size: 28px;
+    text-shadow: none;
+    color: #46b448;
+
+ }
+ .jiage
+ {
+	background: #fafafa !important; 
+    border-radius: 3px;
+    padding: 5px 0 10px 15px !important;    
+    border-radius: 3px;
+    width: 500px; 
+    margin-top: 15px !important;
+	margin-left: 100px;
+	text-align: left;
+
+ }
+  .jiage span
+  {
+  	margin-bottom: 10px;
+  	font-size: 24px;
+  	color: red;
+  	padding-left: 100px;
+ 
+  }
+
+ .shuliang{
+ 	width: 100%;  
+	float: left;
+	padding-left: 100px;
+	padding-top: 30px;
+ 
+  }
+ .shuliang span
+ {
+ 	display: block;
+ 	margin-bottom: 10px;
+  	font-size: 24px;
+  	color: red;
+  	float: left;
+ }
+ 
+.cpinfo
+{
+	float: left; 
+	width: 1033px;	height: 400px;
+ 	padding-top: 10px;
+}
+.buybtn 
+{
+	margin-top: 100px;
+
+}
+.buybtn i {
+    margin-left: -5px;
+  vertical-align:middle;
+}
+ .btnred .icon {
+    line-height: inherit;
+     text-align: left;
+   margin-left: -110px; 
+   margin-top: -8px;
+
+}
+
+.buybtn .btnred
+{	
+
+float: left;
+	 background-color: #f96868;
+    width: 200px;
+    font-size: 16px;
+     display: inline-block;
+    height: 50px;
+    line-height: 40px; 
+    color: #fff;
+    white-space: nowrap; 
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: .9; 
+    text-align: left;
+ margin-left: 60px;
+}
+.buybtn .btnyellow
+
+{	background-color: #f2a654;
+	float: left;
+    width: 200px;
+    font-size: 16px;
+     display: inline-block;
+    height: 50px;
+    line-height: 40px; 
+    color: #fff;
+    white-space: nowrap; 
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: .9; 
+    text-align: left;
+    margin-left: 10px;
+}
+.btnred span{
+	 padding-left: 80px; 
+	  font-size: 16px;
+	  text-align: center;
+}
+.btnred a{
+	 text-decoration:none;
+	 color:#fff;
+}
+ 
+.btnyellow span{
+	 padding-left: 80px; 
+	  font-size: 16px;
+	  text-align: center;
+}
+ .btnyellow .icon {
+    line-height: inherit;
+     text-align: left;
+   margin-left: -100px;
+}
+/*产品详情end*/
+/*个人中心*/
+.header_right_li{width: 120px;height: 40px; text-align:center;background:#424242;color:#aaa;font-size:12px;position: relative;margin-left:10px;  }
+.header_right_li:hover{color:#FF6A00; background: #fff;}
+.header_right_li div{width: 300px;height: 90px;background: #fff;position: absolute;right: 0px;display: none;color: #ccc;z-index: 2;}
+.header_right_li:hover div{display: block;}
+/*个人中心*/
+
+
+ /*底部*/
+.foot
+{
+	width: 1033px;
+	height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 11pt;
+    font-weight: bold;
+    color:white;
+    background: #46b448;
+    margin: 0 auto;
+    padding-left: -100px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+} /*底部*/
